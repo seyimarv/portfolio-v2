@@ -13,7 +13,7 @@ const AboutSection: React.FC = () => {
   const title = useScrollReveal();
 
   return (
-    <section id="about" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="about" className="py-20 md:py-0 px-6 relative overflow-hidden">
       <BlurElement
         position="top-right"
         size="lg"
@@ -32,7 +32,6 @@ const AboutSection: React.FC = () => {
       />
 
       <div className="container mx-auto relative z-10">
-        {/* Section Title / Hero Heading - Text updated */}
         <motion.div
           className={`mb-20 md:mb-32 px-2 md:px-0 reveal ${title.isVisible ? 'active' : ''}`}
           ref={title.ref as React.RefObject<HTMLDivElement>}

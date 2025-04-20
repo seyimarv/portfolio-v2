@@ -22,7 +22,9 @@ const HeroSection: React.FC = () => {
   const [textAnimationComplete, setTextAnimationComplete] = useState(false);
   const isMobile = useIsMobile(); 
   
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({
+    target: typeof window !== 'undefined' ? window : undefined,
+  });
   
   const backgroundY = useTransform(scrollY, [0, 500], isMobile ? [0, 0] : [0, 150]);
   const contentY = useTransform(scrollY, [0, 500], isMobile ? [0, 0] : [0, -75]);
