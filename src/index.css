@@ -1,0 +1,228 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    
+    --primary: 276 66% 15%;
+    --primary-light: 282 54% 21%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 37 100% 80%;
+    --secondary-dark: 285 64% 14%;
+    --secondary-foreground: 276 66% 15%;
+    
+    --grey: 222 25% 61%;
+    
+    --text-primary: 295 95% 94%;
+    --text-secondary: 37 100% 81%;
+    
+    --color-grey-dark-2: rgb(136, 146, 176);
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.15);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.04);
+    
+    --radius: 0.5rem;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 276 66% 15%;
+  }
+
+  .dark {
+    --background: 276 66% 15%;
+    --foreground: 295 95% 94%;
+    
+    --primary: 276 66% 15%;
+    --primary-light: 282 54% 21%;
+    --primary-foreground: 295 95% 94%;
+    
+    --secondary: 37 100% 80%;
+    --secondary-dark: 285 64% 14%;
+    --secondary-foreground: 276 66% 15%;
+    
+    --grey: 222 25% 61%;
+    
+    --text-primary: 295 95% 94%;
+    --text-secondary: 37 100% 81%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 37 100% 80%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html, body, * {
+    font-family: 'Bricolage Grotesque', sans-serif !important;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Custom fonts */
+  .font-logo {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+@layer components {
+  /* Custom cursor */
+  .custom-cursor {
+    @apply fixed w-5 h-5 rounded-full pointer-events-none z-50 mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200;
+    background-color: hsl(var(--secondary));
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .custom-cursor {
+      display: block;
+    }
+  }
+
+  .custom-cursor.expand {
+    @apply w-12 h-12;
+  }
+
+  /* Preloader */
+  .preloader {
+    @apply fixed top-0 left-0 w-full h-full z-50 flex flex-col justify-center items-center bg-white dark:bg-primary px-6 md:px-0;
+  }
+
+  .progress-container {
+    @apply max-w-[500px] w-full h-[15px] mt-5 relative overflow-hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2px;
+  }
+
+  .progress-bar {
+    @apply absolute top-[4px] left-[4px] max-w-[calc(100%-8px)] h-[calc(100%-8px)] transition-all duration-200 rounded-[10px];
+    background-color: hsl(var(--secondary));
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400/50 rounded;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-200/30;
+  }
+
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  /* Animations */
+  .hover-trigger:hover .hover-content {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .hover-content {
+    @apply opacity-0 translate-y-2.5 transition-all duration-300;
+  }
+
+  .card-3d {
+    @apply transition-transform duration-500 transform-gpu;
+  }
+  
+  .card-3d:hover {
+    @apply -translate-y-2.5;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .expand {
+    @apply opacity-0 scale-75 transition-all duration-1000;
+  }
+
+  .expand.active {
+    @apply opacity-100 scale-100;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slideRight 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
