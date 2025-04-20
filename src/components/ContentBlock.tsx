@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/use-scroll-reveal';
 import { ArrowRight } from 'lucide-react';
-import ComputerSvg from '../illustrations/computer';
 
 interface ContentBlockProps {
   imageSrc: string;
@@ -25,7 +24,7 @@ const ContentBlock: React.FC<ContentBlockProps> = ({
   buttonLink,
   imageOnRight = false,
   onButtonClick,
-  SvgComponent = ComputerSvg
+  SvgComponent
 }) => {
   // Set up scroll reveal animations
   const titleReveal = useScrollReveal();

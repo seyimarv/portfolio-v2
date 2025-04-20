@@ -9,9 +9,7 @@ interface HeroImageProps {
 
 const HeroImage = ({ onAnimationComplete, startAnimation = false }: HeroImageProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll({
-    target: typeof window !== 'undefined' ? window : undefined,
-  });
+  const { scrollY } = useScroll();
   const [isHovered, setIsHovered] = useState<number | null>(null);
   const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
