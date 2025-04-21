@@ -80,11 +80,23 @@ const Footer: React.FC = () => {
               >
                 <div className="flex items-center space-x-3">
                   <ArrowRight size={16} className="text-secondary" />
-                  <p>Let's build something great.</p>
+                  <a 
+                    href={`mailto:${portfolioData.contactInfo.email}`}
+                    className="hover:text-secondary transition-colors"
+                  >
+                    Let's build something great.
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <ArrowRight size={16} className="text-secondary" />
-                  <p>Your privacy matters.</p>
+                  <a 
+                    href="/resume.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary transition-colors"
+                  >
+                    View My Resume
+                  </a>
                 </div>
               </motion.div>
             </motion.div>
