@@ -41,10 +41,11 @@ const Header: React.FC = () => {
 
   return (
     <motion.header
-      className="w-full pt-5 pb-8 md:pb-0 bg-transparent"
+      className="w-full pt-5 pb-8 bg-transparent"
       variants={headerVariants}
       initial="hidden"
       animate="visible"
+      id="header"
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.div className="flex items-center gap-0 md:gap-8 w-full md:w-fit" variants={itemVariants}>

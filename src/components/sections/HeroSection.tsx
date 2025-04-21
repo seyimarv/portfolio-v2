@@ -20,6 +20,7 @@ const HeroSection: React.FC = () => {
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [textAnimationComplete, setTextAnimationComplete] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const isMobile = useIsMobile(); 
   
   const { scrollY } = useScroll({
@@ -96,6 +97,13 @@ const HeroSection: React.FC = () => {
     }
   }, [controls, tiltEffect, resetTilt]);
 
+  useEffect(() => {
+    const headerElement = document.getElementById('header');
+    if (headerElement) {
+      setHeaderHeight(headerElement.offsetHeight);
+    }
+  }, []);
+
   const scrollToWork = () => {
     const workSection = document.getElementById('work');
     if (workSection) {
@@ -111,7 +119,12 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative pt-0 overflow-hidden" ref={sectionRef}>
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center relative pt-0 overflow-hidden" 
+      ref={sectionRef}
+      style={{ minHeight: `calc(100vh - ${headerHeight}px)` }}
+    >
       <motion.div 
         className="absolute inset-0 overflow-hidden pointer-events-none will-change-transform"
         style={{ y: backgroundY }}
