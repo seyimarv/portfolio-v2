@@ -49,7 +49,9 @@ const ContactSection: React.FC = () => {
           style={{ transitionDelay: '0.2s' }}
         >
          <a 
-            href="#" 
+            href="mailto:oluwaseyitan299@gmail.com"
+            target='_blank'
+            rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-primary dark:bg-secondary text-white dark:text-primary font-medium rounded-md hover:bg-primary-light dark:hover:bg-secondary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 group"
           >
             <span>Contact me</span>

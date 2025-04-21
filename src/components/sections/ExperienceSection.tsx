@@ -42,7 +42,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 
   return (
     <div
-      className={`${baseClasses} ${!isLast ? 'pb-16' : 'pb-4'} md:pb-0 md:flex-1 md:border md:border-gray-200 dark:md:border-gray-700 md:p-6 lg:p-8 md:rounded-lg`}
+      className={`${baseClasses} ${!isLast ? 'pb-16' : 'pb-4'} md:pb-0 md:flex-1 md:border md:border-secondary/20 md:p-6 lg:p-8 md:rounded-lg`}
     >
       <div className={timelineClasses}></div>
       <div className={dotClasses}></div>

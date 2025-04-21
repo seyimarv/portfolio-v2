@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/use-scroll-reveal';
+import { Github, ExternalLink } from 'lucide-react';
 
 interface ProjectShowcaseProps {
   mainImageSrc: string;
@@ -11,6 +12,8 @@ interface ProjectShowcaseProps {
   mainImageOnRight?: boolean;
   isLast?: boolean;
   className?: string;
+  githubLink?: string;
+  externalLink?: string;
 }
 
 const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
@@ -21,7 +24,9 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
   description,
   mainImageOnRight = false,
   isLast = false,
-  className = ''
+  className = '',
+  githubLink,
+  externalLink
 }) => {
   const mainImageReveal = useScrollReveal({ threshold: 0.3 });
   const smallImage1Reveal = useScrollReveal({ threshold: 0.3 }); 
@@ -93,6 +98,30 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
             </React.Fragment>
           ))}
         </h3>
+        <div className="mt-4 flex space-x-4">
+          {githubLink && githubLink !== '#' && (
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300"
+              aria-label={`GitHub Repository for ${description.substring(0, 30)}...`}
+            >
+              <Github size={18} />
+            </a>
+          )}
+          {externalLink && externalLink !== '#' && (
+            <a
+              href={externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300"
+              aria-label={`Live link for ${description.substring(0, 30)}...`}
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
+        </div>
       </motion.div>
     </div>
   );

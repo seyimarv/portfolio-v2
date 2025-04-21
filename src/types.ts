@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface Project {
   smallImage1: string;
   smallImage2: string;
@@ -30,7 +32,7 @@ export interface NavItem {
 export interface SocialLink {
   platform: string;
   url: string;
-  icon: string;
+  icon: React.ElementType;
 }
 
 export interface ContactInfo {

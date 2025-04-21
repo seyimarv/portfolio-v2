@@ -1,4 +1,5 @@
 import { PortfolioData } from '../types';
+import { Github, Twitter, Linkedin } from 'lucide-react';
 
 export const portfolioData: PortfolioData = {
   navItems: [
@@ -19,8 +20,8 @@ export const portfolioData: PortfolioData = {
       category: ['Web Apps', 'UI/UX'],
       technologies: ['React.js', 'vite', 'Tailwind CSS'],
       caseStudyLink: '#',
-      githubLink: '#',
-      externalLink: '#'
+      githubLink: 'https://github.com/seyimarv/Dashboard-frontend',
+      externalLink: 'https://dashboard-frontend-tau-eight.vercel.app/'
     },
     {
       id: 2,
@@ -30,8 +31,8 @@ export const portfolioData: PortfolioData = {
       category: ['Web Apps', 'UI/UX'],
       technologies: ['React', 'Redux'],
       caseStudyLink: '#',
-      githubLink: '#',
-      externalLink: '#',
+      githubLink: 'https://github.com/seyimarv/noble-clothing',
+      externalLink: 'https://noble-clot.netlify.app/',
       smallImage1: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2020.41.45_I_QhYn1dJ.png?updatedAt=1745178449024',
       smallImage2: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2020.42.08_EPlDDmPro.png?updatedAt=1745178448976'
     },
@@ -43,8 +44,8 @@ export const portfolioData: PortfolioData = {
       category: ['Creative', 'Web Apps'],
       technologies: ['React.js', 'vite', 'Tailwind'],
       caseStudyLink: '#',
-      githubLink: '#',
-      externalLink: '#',
+      githubLink: 'https://github.com/seyimarv/avax-landingpage',
+      externalLink: 'https://avax-landingpage.vercel.app/',
       smallImage1: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2020.40.43_eW2-lzkW_.png?updatedAt=1745178476227',
       smallImage2: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2020.40.21_PkTnkeMUk.png?updatedAt=1745178475408'
     },
@@ -58,8 +59,8 @@ export const portfolioData: PortfolioData = {
       category: ['Web Apps', 'UI/UX'],
       technologies: ['React.js', 'vite', 'Tailwind CSS', 'shadcn'],
       caseStudyLink: '#',
-      githubLink: '#',
-      externalLink: '#'
+      githubLink: 'https://github.com/seyimarv/dwell-showcase',
+      externalLink: 'https://dwell-showcase.vercel.app/'
     },
     {
       id: 5,
@@ -71,8 +72,8 @@ export const portfolioData: PortfolioData = {
       category: ['Web Apps', 'UI/UX'],
       technologies: ['React.js', 'styled-components'],
       caseStudyLink: '#',
-      githubLink: '#',
-      externalLink: '#'
+      githubLink: 'https://github.com/seyimarv/ifumsa-website',
+      externalLink: 'https://ifumsa-website.vercel.app/'
     }
   ],
   developmentSkills: [
@@ -94,13 +95,12 @@ export const portfolioData: PortfolioData = {
     { name: 'Figma', icon: 'fab fa-figma' }
   ],
   contactInfo: {
-    email: 'hello@example.com',
-    location: 'San Francisco, CA',
+    email: 'oluwaseyitan299@gmail.com',
+    location: 'Lagos, Ng',
     social: [
-      { platform: 'GitHub', url: '#', icon: 'fab fa-github' },
-      { platform: 'Twitter', url: '#', icon: 'fab fa-twitter' },
-      { platform: 'LinkedIn', url: '#', icon: 'fab fa-linkedin-in' },
-      { platform: 'Dribbble', url: '#', icon: 'fab fa-dribbble' }
+      { platform: 'GitHub', url: 'https://github.com/seyimarv', icon: Github },
+      { platform: 'Twitter', url: 'https://x.com/Femsey11', icon: Twitter },
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/oyewo-oluwaseyitan-marvelous-2a47441a9/', icon: Linkedin },
     ]
   }
 };

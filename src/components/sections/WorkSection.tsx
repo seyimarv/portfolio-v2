@@ -38,6 +38,8 @@ const WorkSection: React.FC = () => {
                 smallImage2Src={project.smallImage2}
                 skills={project.technologies}
                 description={project.description}
+                githubLink={project.githubLink}
+                externalLink={project.externalLink}
                 className="mb-16 md:mb-24 last:mb-0"
                 isLast={index === portfolioData.projects.length - 1}
               />

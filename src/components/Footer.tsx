@@ -2,7 +2,7 @@ import React from 'react';
 import { portfolioData } from '../lib/data';
 import { useScrollReveal } from '../hooks/use-scroll-reveal';
 import { motion } from 'framer-motion';
-import { ArrowRight, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Footer: React.FC = () => {
 
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
   const socialReveal = useScrollReveal();
 
   return (
-    <footer className="py-16 md:py-20 bg-primary dark:bg-primary text-white overflow-hidden border-t">
+    <footer className="py-16 md:py-20 bg-primary dark:bg-primary text-white overflow-hidden border-t border-secondary/20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 gap-8 md:flex md:justify-between md:items-start">
           <div className="md:flex md:gap-16">
@@ -114,15 +114,21 @@ const Footer: React.FC = () => {
               className={`flex space-x-6 mb-8 reveal ${socialReveal.isVisible ? 'active' : ''}`}
               style={{ transitionDelay: '0.6s' }}
             >
-              <a href={portfolioData.contactInfo.social.find(s => s.platform.toLowerCase() === 'instagram')?.url || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
-                <Instagram size={24} />
-              </a>
-              <a href={portfolioData.contactInfo.social.find(s => s.platform.toLowerCase() === 'facebook')?.url || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
-                <Facebook size={24} />
-              </a>
-              <a href={portfolioData.contactInfo.social.find(s => s.platform.toLowerCase() === 'linkedin')?.url || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
-                <Linkedin size={24} />
-              </a>
+              {portfolioData.contactInfo.social.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary transition-colors"
+                    aria-label={social.platform}
+                  >
+                    <IconComponent size={24} />
+                  </a>
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 import { NavItem } from '../types';
 import { portfolioData } from '../lib/data';
-import { Instagram, Facebook, Linkedin, Menu, ArrowRight } from 'lucide-react';
+import { Menu, ArrowRight } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,12 +70,9 @@ const Header: React.FC = () => {
         </motion.div>
         <motion.div className="hidden md:flex items-center space-x-4" variants={itemVariants}>
           <a
-            href="#contact"
+            href="mailto:oluwaseyitan299@gmail.com"
             className="hidden md:flex items-center text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300 border-b border-primary/20 dark:border-white/90 pb-2"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}
+            target='_blank'
           >
             <span className="mr-2">Contact me</span>
             <ArrowRight size={16} />
@@ -83,15 +80,21 @@ const Header: React.FC = () => {
         </motion.div>
         <motion.div className="flex items-center space-x-6" variants={itemVariants}>
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="Instagram">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="Facebook">
-              <Facebook size={20} />
-            </a>
-            <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="LinkedIn">
-              <Linkedin size={20} />
-            </a>
+            {portfolioData.contactInfo.social.map((social) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={social.platform}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300"
+                  aria-label={social.platform}
+                >
+                  <IconComponent size={20} />
+                </a>
+              );
+            })}
           </div>
           <ThemeToggle />
         </motion.div>
@@ -142,28 +145,33 @@ const Header: React.FC = () => {
               </ul>
             </nav>
             <div className="mt-16 flex space-x-6">
-              <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="Instagram">
-                <Instagram size={24} />
-              </a>
-              <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="Facebook">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300" aria-label="LinkedIn">
-                <Linkedin size={24} />
-              </a>
+              {portfolioData.contactInfo.social.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary dark:text-white hover:text-secondary dark:hover:text-secondary transition-colors duration-300"
+                    aria-label={social.platform}
+                  >
+                    <IconComponent size={24} />
+                  </a>
+                );
+              })}
             </div>
             <div className="mt-12">
               <a
-                href="#contact"
+                href="mailto:oluwaseyitan299@gmail.com"
                 className="inline-flex items-center px-6 py-3 bg-primary dark:bg-secondary text-white dark:text-primary font-medium rounded-md hover:bg-primary-light dark:hover:bg-secondary/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('contact');
-                }}
+                target='_blank'
+                rel="noopener noreferrer"
               >
                 <span>Contact me</span>
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
+
             </div>
           </div>
         </motion.div>
