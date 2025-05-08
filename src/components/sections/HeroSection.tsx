@@ -24,6 +24,7 @@ const HeroSection: React.FC = () => {
   const isMobile = useIsMobile(); 
   
   const { scrollY } = useScroll({
+    // @ts-expect-error
     target: typeof window !== 'undefined' ? window : undefined,
   });
   

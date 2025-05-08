@@ -10,6 +10,7 @@ interface HeroImageProps {
 const HeroImage = ({ onAnimationComplete, startAnimation = false }: HeroImageProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
+    // @ts-expect-error
     target: typeof window !== 'undefined' ? window : undefined,
   });
   const [isHovered, setIsHovered] = useState<number | null>(null);
