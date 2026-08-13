@@ -1,13 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform, MotionValue } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import BlurElement from '../BlurElement';
 
-interface ExperienceItemProps {
+interface Experience {
   company: string;
+  companyUrl?: string;
   role: string;
   years: string;
   description: string;
+}
+
+interface ExperienceItemProps extends Experience {
   index: number;
   isLast: boolean;
   sectionScrollYProgress: MotionValue<number>;
@@ -16,6 +21,7 @@ interface ExperienceItemProps {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({
   company,
+  companyUrl,
   role,
   years,
   description,
@@ -42,7 +48,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
 
   return (
     <div
-      className={`${baseClasses} ${!isLast ? 'pb-16' : 'pb-4'} md:pb-0 md:flex-1 md:border md:border-secondary/20 md:p-6 lg:p-8 md:rounded-lg`}
+      className={`${baseClasses} ${!isLast ? 'pb-16' : 'pb-4'} md:pb-0 md:h-full md:border md:border-secondary/20 md:p-6 lg:p-8 md:rounded-lg`}
     >
       <div className={timelineClasses}></div>
       <div className={dotClasses}></div>
@@ -52,7 +58,21 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
           style={{ opacity: companyYearsOpacity, y: companyYearsY }}
           className="mb-3 md:mb-4"
         >
-          <h3 className="text-xl md:text-2xl font-bold text-primary-light dark:text-secondary mb-1">{company}</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-primary-light dark:text-secondary mb-1">
+            {companyUrl ? (
+              <a
+                href={companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1 hover:underline underline-offset-4 decoration-secondary/50"
+              >
+                {company}
+                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 opacity-50 transition-opacity group-hover:opacity-100" />
+              </a>
+            ) : (
+              company
+            )}
+          </h3>
           <p className="text-sm text-gray-500 dark:text-gray-400 tracking-wide font-medium">{years}</p>
         </motion.div>
 
@@ -95,24 +115,45 @@ const ExperienceSection: React.FC = () => {
     };
   }, []);
 
-  const experiences = [
+  const experiences: Experience[] = [
     {
-      company: "5irechain",
-      role: "Frontend Developer",
+      company: "Shipper",
+      companyUrl: "https://shipper.now/",
+      role: "Fullstack AI Engineer",
+      years: "2025 - Present",
+      description: "Building core features for an AI-powered website builder, translating complex AI workflows into intuitive, responsive UI. Architected frontend state management for real-time collaborative editing with Jotai and React Query, backed by Jest and Playwright suites that keep rapid release cycles stable."
+    },
+    {
+      company: "Icode Innovation Hub",
+      role: "Frontend Engineer",
+      years: "2025 - Present",
+      description: "Developed HelTHya AI, an AI health assistant delivering personalized medical insights, and HelTHya Consult, a virtual consultation platform connecting patients to licensed practitioners with real-time scheduling. Drove frontend architecture across both products, establishing shared component and state management patterns."
+    },
+    {
+      company: "Globitel",
+      companyUrl: "https://globitel.com/",
+      role: "Technical Documentation Developer",
+      years: "Jul - Oct 2025",
+      description: "Built a documentation platform connecting Strapi to Docusaurus, automating HTML-to-Markdown conversion and static site generation. Shipped full-text search, content versioning, multilingual support, and PDF export, plus a CMS user guide rated 5/5 by the client."
+    },
+    {
+      company: "5ireChain",
+      companyUrl: "https://5ire.webflow.io/",
+      role: "Frontend Engineer",
       years: "2022 - 2024",
-      description: "Spearheaded the development of high-performance, cross-platform frontend applications, translating complex UI/UX designs into seamless, responsive user interfaces. Played a key role in building core platforms including 5ireScan, the Validator App, and the Nominator App."
+      description: "Built 5ireScan, a blockchain explorer rendering real-time transaction, block, and validator data at scale. Developed the Validator and Nominator staking apps, complex multi-step flows interfacing directly with on-chain state via Web3.js, translated from designs into pixel-perfect, cross-platform frontends."
     },
     {
-      company: "Livrite Healthcare Services",
-      role: "Frontend Software Engineer",
-      years: "2021-2023",
-      description: "Designed and delivered robust, high-performance applications optimized for cross-platform compatibility. Expertly translated UI/UX mockups into interactive web pages, integrated RESTful APIs, implemented comprehensive software testing, and contributed to strategic technical architecture decisions."
+      company: "Livrite Healthcare",
+      role: "Frontend Developer",
+      years: "2021 - 2023",
+      description: "Led frontend development for a healthtech platform, building responsive, accessible interfaces and integrating REST APIs for clinical data flows. Implemented comprehensive testing per feature and contributed to the technical architecture decisions that shaped the platform's long-term strategy."
     },
     {
-      company: "Freelancing",
-      role: "Fullstack Developer",
-      years: "2020 - present",
-      description: "Collaborated with product and design teams to deliver compelling web applications. Developed and maintained fullstack solutions using React, Next.js, and Express, converting UI/UX mockups into responsive designs and integrating REST API endpoints."
+      company: "Freelance",
+      role: "Frontend Engineer",
+      years: "2020 - Present",
+      description: "Deliver end-to-end frontend solutions for clients across e-commerce, SaaS, and community platforms. Collaborate directly with product designers and backend engineers to ship polished, production-ready products."
     }
   ];
 
@@ -169,12 +210,13 @@ const ExperienceSection: React.FC = () => {
 
         <div
           ref={sectionRef}
-          className="relative mt-20 md:mt-24 max-w-3xl mx-auto md:max-w-none md:flex md:flex-row md:space-x-6 lg:space-x-8"
+          className="relative mt-20 md:mt-24 max-w-3xl mx-auto md:max-w-none md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8"
         >
           {experiences.map((exp, index) => (
             <ExperienceItem
               key={index}
               company={exp.company}
+              companyUrl={exp.companyUrl}
               role={exp.role}
               years={exp.years}
               description={exp.description}
