@@ -125,6 +125,7 @@ const ExperienceSection: React.FC = () => {
     },
     {
       company: "Icode Innovation Hub",
+      companyUrl: "https://chat.helthya.com/",
       role: "Frontend Engineer",
       years: "2025 - Present",
       description: "Developed HelTHya AI, an AI health assistant delivering personalized medical insights, and HelTHya Consult, a virtual consultation platform connecting patients to licensed practitioners with real-time scheduling. Drove frontend architecture across both products, establishing shared component and state management patterns."
