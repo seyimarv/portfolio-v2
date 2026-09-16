@@ -89,7 +89,7 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
         ref={textReveal.ref as React.RefObject<HTMLDivElement>}
         style={{ transitionDelay: '0.8s' }}
       >
-        <p className="text-lg md:text-xl lg:text-2xl">{description}</p>
+        <p className="text-lg md:text-xl lg:text-2xl lg:min-h-[4.5em]">{description}</p>
         <h3 className="text-secondary dark:text-secondary font-bold text-sm md:text-base mt-4 md:mt-6 lg:mt-8">
           {skills.map((skill, index) => (
             <React.Fragment key={index}>
@@ -131,11 +131,11 @@ const ProjectShowcase: React.FC<ProjectShowcaseProps> = ({
       id={isLast ? "last-project-showcase" : undefined}
       className={`container mx-auto ${className}`}
     >
-      {/* Cards must all be the same height: WorkSection pins each one 2rem below the last, so a
-          card taller than the next one by more than that pokes out from under it. Content-driven
-          heights broke this, hence the fixed min-h — keep descriptions short enough to fit it. */}
+      {/* WorkSection pins each card 2rem below the last, so a card taller than the next one by more
+          than that pokes out from under it. The description reserves a fixed 3-line block (min-h
+          above) so copy length can't change the card height — keep descriptions to 3 lines. */}
       <motion.div
-        className="border border-secondary/20 bg-gray-50 dark:bg-primary overflow-hidden flex flex-col lg:flex-row items-stretch rounded-2xl p-4 md:p-6 lg:min-h-[600px]"
+        className="border border-secondary/20 bg-gray-50 dark:bg-primary overflow-hidden flex flex-col lg:flex-row items-stretch rounded-2xl p-4 md:p-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

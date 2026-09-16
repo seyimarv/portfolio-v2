@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 1,
       title: 'MedRehearse',
-      description: 'OSCE practice for medical students and doctors — take the history from an AI patient by voice, examine, order tests and treat, then get marked like a real examiner with a guideline citation behind every point.',
+      description: 'OSCE practice for medical students and doctors — take the history, examine, treat, then get marked against the guideline behind every call.',
       image: '/projects/medrehearse-main.jpg',
       smallImage1: '/projects/medrehearse-2.jpg',
       smallImage2: '/projects/medrehearse-3.jpg',
