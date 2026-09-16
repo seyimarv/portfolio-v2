@@ -38,21 +38,20 @@ const AboutSection: React.FC = () => {
           style={{ transitionDelay: '0.2s' }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight font-heading">
-            <span>A Full-Stack </span>
-            <span className="text-primary-light dark:text-secondary">Developer</span>
-            <span className=" block sm:inline"> — crafting seamless digital experiences</span>
-            <span className=" block sm:inline"> from frontend to backend.</span>
-            <div className="mt-6 md:mt-10">
-              <span>Bringing designs to life with modern UI frameworks while building robust backend systems that power them.</span>
-            </div>
+            <span>Five years of building things that actually </span>
+            <span className="text-primary-light dark:text-secondary">ship</span>
+            <span>.</span>
           </h1>
+          <p className="mt-6 md:mt-10 max-w-3xl text-lg md:text-xl text-gray-600 dark:text-grey">
+            I've worked across blockchain, healthtech, e-commerce, and AI, building products that people actually use. I care about making things fast, keeping the codebase easy to work with, and building things in a way that still makes sense when you come back to them months later.
+          </p>
         </motion.div>
 
         <ContentBlock
           imageSrc="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
           imageAlt="Laptop displaying code, representing software development"
-          title="End-to-End Development"
-          description="As a full-stack developer with a passion for frontend innovation, I create end-to-end web solutions. From responsive user interfaces powered by React to building efficient server-side architectures, I ensure seamless integration throughout the stack."
+          title="I work on both sides of the stack"
+          description="Frontend is where I spend most of my time. React, Next.js, TypeScript, state management, and all the little details that make an interface feel right. I also build the backend behind it: Node APIs, Postgres databases, authentication, and the services my frontend depends on. Being able to work across both sides makes debugging a lot easier because I can usually trace a problem from the UI all the way to the database instead of passing it around between teams."
           buttonText="View My Work"
           buttonLink="#projects"
           imageOnRight={false}
@@ -61,26 +60,26 @@ const AboutSection: React.FC = () => {
 
         <div className="my-2 md:my-4 grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
           <VerticalContentBlock
-            title="Turning Ideas into Scalable Solutions"
-            description="I specialize in bridging the gap between frontend and backend. With expertise in both, I build scalable solutions that are not only functional but also aligned with business goals and designed to grow."
+            title="Building with LLMs"
+            description="I've been working with LLMs beyond the usual chatbot setup. That means streaming responses, prompt design, tool calls, generated code, and building interfaces around model output. I've worked with Claude, OpenAI, and the Vercel AI SDK, with a lot of the work focused on making AI feel reliable: showing users what's happening, handling failures properly, and making generated output something they can actually work with. The model is only part of the product. The experience around it matters just as much."
             IllustrationComponent={<div className="w-full relative h-full"><Illustration5 /></div>}
             className="h-full"
           />
 
           <div className="flex flex-col gap-4 h-full">
             <PerformanceCard
-              title="Fluid, User-Centric Interfaces"
-              description="Building engaging, responsive interfaces that make the user journey intuitive and delightful using modern frontend frameworks."
+              title="Performance that you can actually feel"
+              description="I care about performance, especially when an app has a lot going on at once. Lists updating in real time, large amounts of data, complex interactions, and long-running operations all need to stay responsive. I usually profile first rather than guessing at what needs to be changed because a lot of the time, the problem isn't where you first expect it to be."
               className="flex-1"
             />
             <PerformanceCard
-              title="Reliable Backend Solutions"
-              description="Designing powerful backend systems that support data integrity, security, and scalability for seamless application performance."
+              title="State, without the mess"
+              description="I've worked with Jotai, Zustand, Redux, and React Query. For me, the important part isn't picking the trendiest state library. It's figuring out what actually needs to be shared, where it should live, and keeping those boundaries clear. Good state management should make the rest of the application easier to understand, not harder."
               className="flex-1"
             />
             <PerformanceCard
-              title="End-to-End Application Integration"
-              description="Connecting frontend and backend seamlessly to deliver high-performance, fully integrated applications that work flawlessly together."
+              title="Code people can actually work with"
+              description="I've worked with Jest, Playwright, Cypress, and Storybook across different projects. I like code that another developer can open and understand without needing me to explain what I was thinking. Clear patterns, sensible naming, useful tests, and components that don't try to do everything are usually enough to get you there."
               className="flex-1"
             />
           </div>
@@ -89,8 +88,8 @@ const AboutSection: React.FC = () => {
         <ContentBlock
           imageSrc="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
           imageAlt="Laptop displaying code on a desk"
-          title="Adaptable, Modern Solutions"
-          description="Fluent across the entire stack, I develop with the latest technologies to build scalable and future-proof solutions. From frontend frameworks like React to backend technologies and cloud services, I ensure your project is built for today and tomorrow."
+          title="How I work"
+          description="I learn quickly, and I usually start by understanding how something works before changing it. I read the existing code, figure out why things were built the way they were, and then make the smallest change that solves the actual problem. I don't particularly enjoy overengineering things. If something simple works, I'll take simple. I'm at my best when I'm building something useful, working with people who care about the product, and getting things into the hands of users."
           buttonText="Let's Collaborate"
           buttonLink="#contact"
           imageOnRight={true}

@@ -51,8 +51,8 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 4,
-      title: 'E-commerce Platform',
-      description: 'Full-featured e-commerce platform with product filtering, cart, and payment processing.',
+      title: 'ShopHaul',
+      description: 'Headless storefront built on Medusa — instant Algolia search across collections, a persistent cart, and Paystack checkout.',
       image: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-05-08%20at%2004.35.08_IOwLKNC6b.png?updatedAt=1746676209559',
       category: ['Web Apps', 'UI/UX'],
       technologies: ['Next.js', 'Tailwind CSS', 'TanStack Query'],

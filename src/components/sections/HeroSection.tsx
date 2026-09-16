@@ -182,7 +182,7 @@ const HeroSection: React.FC = () => {
                 className="mb-4"
               >
                 <span className="inline-block px-4 py-1 rounded-full bg-secondary/10 dark:bg-secondary/20 text-primary dark:text-secondary border border-secondary/20 text-sm font-medium">
-                  Fullstack Developer
+                  Fullstack Engineer · AI
                 </span>
               </motion.div>
               
@@ -203,7 +203,7 @@ const HeroSection: React.FC = () => {
                 className="text-gray-600 dark:text-grey text-lg md:text-xl mb-8 max-w-lg"
                 variants={itemVariants}
               >
-                I build exceptional and accessible digital experiences for the web, focusing on both aesthetics and functionality.
+                I've spent the last five years building and shipping production web apps across blockchain, healthtech, e-commerce, and now AI. These days, I'm building AI products and tools around LLMs.
               </motion.p>
               
               <motion.div 
