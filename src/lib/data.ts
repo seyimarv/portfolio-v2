@@ -64,19 +64,6 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 5,
-      title: 'Analytics Dashboard',
-      description: 'Dynamic analytics dashboard with interactive charts and data filtering.',
-      image: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2017.59.51_FL-Dp90N9.png?updatedAt=1745168745545',
-      smallImage1: "https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2018.00.29_PcxASEBS8.png?updatedAt=1745168745258",
-      smallImage2: "https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2018.00.11_OKvgPki_T.png?updatedAt=1745168744873",
-      category: ['Web Apps', 'UI/UX'],
-      technologies: ['React.js', 'vite', 'Tailwind CSS'],
-      caseStudyLink: '#',
-      githubLink: 'https://github.com/seyimarv/Dashboard-frontend',
-      externalLink: 'https://dashboard-frontend-tau-eight.vercel.app/'
-    },
-    {
-      id: 6,
       title: 'Noble Clothing',
       description: 'Full-featured e-commerce platform with product filtering, cart, and payment processing.',
       image: 'https://ik.imagekit.io/hkuo8pbq93/Screenshot%202025-04-20%20at%2020.41.09_1DgouOatv.png?updatedAt=1745178447637',
